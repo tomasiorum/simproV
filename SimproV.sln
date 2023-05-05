@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33516.290
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimproV", "SimproV.csproj", "{B74F9289-CE3C-41BE-9BCF-47E19ECC45E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimproV", "SimproV.csproj", "{C499A21E-B9D2-47B6-ABF8-862AC3140272}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B74F9289-CE3C-41BE-9BCF-47E19ECC45E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B74F9289-CE3C-41BE-9BCF-47E19ECC45E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B74F9289-CE3C-41BE-9BCF-47E19ECC45E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B74F9289-CE3C-41BE-9BCF-47E19ECC45E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C499A21E-B9D2-47B6-ABF8-862AC3140272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C499A21E-B9D2-47B6-ABF8-862AC3140272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C499A21E-B9D2-47B6-ABF8-862AC3140272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C499A21E-B9D2-47B6-ABF8-862AC3140272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D07D659E-E4FB-4ECA-A4C1-55054C158561}
+		SolutionGuid = {F427AE8B-1701-4533-978D-579F78E992A7}
 	EndGlobalSection
 EndGlobal

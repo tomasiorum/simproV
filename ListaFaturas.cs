@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimproV
 {
-    internal class ListaFaturas
+    class ListaFaturas
     {
-        //lista dos comerciantes(nifs), nomes e respetivas qtd de faturas a validar
     }
 }
