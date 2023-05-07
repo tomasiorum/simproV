@@ -9,20 +9,18 @@ namespace SimproV
 {
     class Model
     {
-        private Controller controller;
         private View view;
-        private ListaFaturas listapendentes;
-
-        public Model(Controller c, View v)
+        public Model(View v)
         {
-            controller = c;
             view = v;
         }
-
-        public ListaFaturas ListaPendentes()
+        /// <summary>
+        /// Retorna a lista de nifs enomes comerciantes com faturas pendentes
+        /// </summary>
+        /// <param name="listadependentes"></param>
+        public void SolicitarListaFaturas(ref List<Fatura> listadependentes)
         {
-            // Retorna a lista de nifs enomes comerciantes com faturas pendentes
-            return listapendentes;
         }
     }
 }
+

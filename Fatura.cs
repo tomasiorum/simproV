@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimproV
 {
-    class ListaFaturas
+    public class Fatura
     {
     }
 }

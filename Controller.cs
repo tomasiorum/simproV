@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimproV
+﻿namespace SimproV
 {
-    public class Controller
+
+    class Controller
     {
         View view;
         Model model;
 
+        public delegate void AtivacaoInterface(object origem);
+        //public event AtivacaoInterface AtivarInterface;
+
         public Controller()
         {
-            view = new View(this, model);
-            model = new Model(this, view);
+            view = new View(model);
+            model = new Model(view);
+
+            view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
+            //view.PrecisoDeListaFaturas += model.SolicitarListaFaturas;
         }
 
         public void IniciarPrograma()
@@ -22,11 +23,12 @@ namespace SimproV
             //Implementar....
             view.AtivarInterface();
         }
-        public void UtilizadorClicouemEntrar()
+        public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
         {
             // Implementar...
-            model.ListaPendentes();
+           // model.SolicitarListaFaturas();
         }
 
     }
 }
+

@@ -29,21 +29,22 @@ namespace SimproV
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnSolicitarFaturas = new System.Windows.Forms.Button();
             this.txtNIF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnConfirma
+            // btnSolicitarFaturas
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(274, 219);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(204, 23);
-            this.btnConfirma.TabIndex = 0;
-            this.btnConfirma.Text = "Confirma";
-            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnSolicitarFaturas.Location = new System.Drawing.Point(274, 219);
+            this.btnSolicitarFaturas.Name = "btnSolicitarFaturas";
+            this.btnSolicitarFaturas.Size = new System.Drawing.Size(204, 23);
+            this.btnSolicitarFaturas.TabIndex = 0;
+            this.btnSolicitarFaturas.Text = "Confirma";
+            this.btnSolicitarFaturas.UseVisualStyleBackColor = true;
+            this.btnSolicitarFaturas.Click += new System.EventHandler(this.btnSolicitarFaturas_Click);
             // 
             // txtNIF
             // 
@@ -86,7 +87,7 @@ namespace SimproV
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNIF);
-            this.Controls.Add(this.btnConfirma);
+            this.Controls.Add(this.btnSolicitarFaturas);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -96,7 +97,7 @@ namespace SimproV
 
         #endregion
 
-        private System.Windows.Forms.Button btnConfirma;
+        private System.Windows.Forms.Button btnSolicitarFaturas;
         private System.Windows.Forms.TextBox txtNIF;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSenha;

@@ -6,17 +6,16 @@ using System.Windows.Forms;
 
 namespace SimproV
 {
-    static class Program
+    class SimproV
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Ponto de entrada principal para o aplicativo
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Controller controller = new Controller();
+            controller.IniciarPrograma();
         }
     }
 }
