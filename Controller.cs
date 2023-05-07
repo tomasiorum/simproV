@@ -15,7 +15,7 @@
             model = new Model(view);
 
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
-            //view.PrecisoDeListaFaturas += model.SolicitarListaFaturas;
+            view.PrecisoDeFaturas += model.SolicitarListaFaturas;
         }
 
         public void IniciarPrograma()

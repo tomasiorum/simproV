@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace SimproV
 {
     class Model
     {
         private View view;
+        
         public Model(View v)
         {
             view = v;
@@ -17,8 +13,8 @@ namespace SimproV
         /// <summary>
         /// Retorna a lista de nifs enomes comerciantes com faturas pendentes
         /// </summary>
-        /// <param name="listadependentes"></param>
-        public void SolicitarListaFaturas(ref List<Fatura> listadependentes)
+        /// <param name="listadefaturas"></param>
+        public void SolicitarListaFaturas(ref List<Fatura> listadefaturas)
         {
         }
     }
