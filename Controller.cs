@@ -26,7 +26,7 @@
         public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
         {
             // Implementar...
-           // model.SolicitarListaFaturas();
+            // model.SolicitarListaFaturas();
         }
 
     }

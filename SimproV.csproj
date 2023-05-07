@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
+    <Compile Include="ExceptionErroLigacao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

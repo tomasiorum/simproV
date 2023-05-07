@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SimproV.Models;
+using System.Collections.Generic;
 
 namespace SimproV
 {
@@ -16,6 +17,17 @@ namespace SimproV
         /// <param name="listadefaturas"></param>
         public void SolicitarListaFaturas(ref List<Fatura> listadefaturas)
         {
+
+            AutoridadeTributaria at = new AutoridadeTributaria();
+            try
+            {
+                at.Processar();
+            } catch (ExceptionErroLigacao )
+            {
+                throw new ExceptionErroLigacao(at.GetMensagemErro());
+            }
+
+            
         }
     }
 }

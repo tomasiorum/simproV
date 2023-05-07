@@ -8,7 +8,8 @@ namespace SimproV.Models
     {
         private string _nif;
         private string _senha;
-        public AutoridadeTributaria(string nif, string senha)
+        private string _mensagemErro;
+        public AutoridadeTributaria(string nif = "", string senha = "")
         {
             _nif = nif;
             _senha = senha;
@@ -16,7 +17,19 @@ namespace SimproV.Models
 
         public void Processar()
         {
-            Login();
+            try
+            {
+                Login();
+            }
+            catch
+            {
+                _mensagemErro = "Erro ao efetuar login.";
+                throw;
+            }
+        }
+        public string GetMensagemErro()
+        {
+            return _mensagemErro;
         }
 
         //<input type="text" name="username" id="username" title="Insira um N° de Contribuinte válido" class="customField" placeholder="Nº de Contribuinte" pattern="[0-9/]{9,14}" required="" autofocus="autofocus" aria-required="true">
