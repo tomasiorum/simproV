@@ -15,7 +15,7 @@ namespace SimproV
         /// Retorna a lista de nifs enomes comerciantes com faturas pendentes
         /// </summary>
         /// <param name="listadefaturas"></param>
-        public void SolicitarListaFaturas(ref List<Fatura> listadefaturas)
+        public void SolicitarListaFaturas(ref List<Fatura> listadefaturas,ref string nif, ref string senha)
         {
 
             AutoridadeTributaria at = new AutoridadeTributaria();

@@ -1,4 +1,6 @@
-﻿namespace SimproV
+﻿using System.Collections.Generic;
+
+namespace SimproV
 {
 
     class Controller
@@ -7,7 +9,7 @@
         Model model;
 
         public delegate void AtivacaoInterface(object origem);
-        //public event AtivacaoInterface AtivarInterface;
+        
 
         public Controller()
         {
@@ -25,8 +27,11 @@
         }
         public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
         {
+            List<Fatura> listadefaturas = new List<Fatura>();
+            string nif = view.GetNIF();
+            string senha = view.GetSenha();
             // Implementar...
-            // model.SolicitarListaFaturas();
+            model.SolicitarListaFaturas(ref listadefaturas,ref nif, ref senha);
         }
 
     }
