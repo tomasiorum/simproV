@@ -52,6 +52,7 @@ namespace SimproV
             this.txtNIF.Name = "txtNIF";
             this.txtNIF.Size = new System.Drawing.Size(204, 20);
             this.txtNIF.TabIndex = 1;
+
             // 
             // label1
             // 

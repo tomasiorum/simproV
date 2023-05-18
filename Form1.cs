@@ -17,5 +17,6 @@ namespace SimproV
             
             view.CliqueEmListaFaturas(sender, e,txtNIF.Text,txtSenha.Text);
         }
+
     }
 }

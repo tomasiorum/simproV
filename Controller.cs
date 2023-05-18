@@ -18,6 +18,9 @@ namespace SimproV
 
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
+
+            model.ListaDeComerciantes += view.NovaListaFaturas;
+
         }
 
         public void IniciarPrograma()
@@ -27,11 +30,7 @@ namespace SimproV
         }
         public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
         {
-            List<Fatura> listadefaturas = new List<Fatura>();
-            string nif = view.GetNIF();
-            string senha = view.GetSenha();
-            // Implementar...
-            model.SolicitarListaFaturas(ref listadefaturas,ref nif, ref senha);
+            view.NovaListaFaturas();
         }
 
     }
