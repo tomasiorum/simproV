@@ -19,7 +19,7 @@ namespace SimproV
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
 
-            model.ListaDeComerciantes += view.NovaListaFaturas;
+            //model.ListaDeComerciantes += view.NovaListaFaturas;
 
         }
 

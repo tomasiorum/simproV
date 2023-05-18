@@ -7,7 +7,7 @@ namespace SimproV
     {
         private View view;
         public delegate void NotificarListaDeComerciantes();
-        public event NotificarListaDeComerciantes ListaDeComerciantes;
+        //public event NotificarListaDeComerciantes ListaDeComerciantes;
         public Model(View v)
         {
             view = v;
@@ -32,7 +32,7 @@ namespace SimproV
                 throw new ExceptionErroLigacao(at.GetMensagemErro());
             }
 
-            ListaDeComerciantes();
+           // ListaDeComerciantes();
         }
     }
 }
