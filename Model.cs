@@ -1,4 +1,4 @@
-﻿using SimproV.Models;
+﻿
 using System.Collections.Generic;
 
 namespace SimproV
@@ -7,7 +7,7 @@ namespace SimproV
     {
         private View view;
         public delegate void NotificarListaDeComerciantes();
-        //public event NotificarListaDeComerciantes ListaDeComerciantes;
+        public event NotificarListaDeComerciantes ListaDeComerciantes;
         public Model(View v)
         {
             view = v;
@@ -20,19 +20,19 @@ namespace SimproV
         {
 
         }
-        public void SolicitarListaFaturas(ref List<Fatura> listadeformas,ref string nif, ref string senha)
+        public void SolicitarListaFaturas(ref List<Fatura> listaDeFaturas,ref string nif, ref string senha)
         {
            
             AutoridadeTributaria at = new AutoridadeTributaria(nif,senha);
             try
             {
-                at.Processar();
+                 listaDeFaturas = at.Processar();
             } catch (ExceptionErroLigacao )
             {
                 throw new ExceptionErroLigacao(at.GetMensagemErro());
             }
 
-           // ListaDeComerciantes();
+            ListaDeComerciantes();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace SimproV.Models
+namespace SimproV
 {
     class SeleniumSetMethods
     {

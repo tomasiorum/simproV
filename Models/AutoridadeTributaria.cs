@@ -1,31 +1,61 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using System.Collections.Generic;
 using System.Threading;
 
-namespace SimproV.Models
+namespace SimproV
 {
+    public enum ErrosLigacao { SiteEmBaixo };
     public class AutoridadeTributaria
     {
+
         private string _nif;
         private string _senha;
         private string _mensagemErro;
-        public AutoridadeTributaria(string nif = "", string senha = "")
+        ErrosLigacao tipoerro;
+
+        public ErrosLigacao TipoErro
+        {
+            get { return tipoerro; }
+            set { tipoerro = value; }
+        }
+        public AutoridadeTributaria(string nif, string senha)
         {
             _nif = nif;
             _senha = senha;
         }
 
-        public void Processar()
+        public List<Fatura> Processar()
         {
+            List<Fatura> listaDeFaturas = new List<Fatura>();
             try
             {
                 Login();
+                listaDeFaturas.Add(new Fatura
+                {
+                    NIFComerciante = "111111111",
+                    Nome = "Comerciante A",
+                    QtDocumentos = 10
+                });
+                listaDeFaturas.Add(new Fatura
+                {
+                    NIFComerciante = "222222222",
+                    Nome = "Comerciante b",
+                    QtDocumentos = 5 
+                });
+                listaDeFaturas.Add(new Fatura
+                {
+                    NIFComerciante = "333333333",
+                    Nome = "Comerciante c",
+                    QtDocumentos = 7 
+                });
             }
             catch
             {
                 _mensagemErro = "Erro ao efetuar login.";
                 throw;
             }
+            return listaDeFaturas;
         }
         public string GetMensagemErro()
         {
@@ -41,7 +71,12 @@ namespace SimproV.Models
             var loginUsername = _nif;
             var loginPassword = _senha;
 
-            Configuration.driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.AddArguments("--headless");
+            Configuration.driver = new FirefoxDriver(options);
+
+
+
 
             Configuration.driver.Navigate().GoToUrl("http://www.selenium.academy/Examples/Interaction.html");
             SeleniumSetMethods.EnterText("textbox", loginUsername, "Id");
@@ -52,7 +87,7 @@ namespace SimproV.Models
 
             button.Click();
 
-            //Configuration.driver.Quit();
+            Configuration.driver.Quit();
 
             /*
 

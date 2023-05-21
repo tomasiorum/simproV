@@ -5,14 +5,16 @@ namespace SimproV
 {
     public class View
     {
-
+        
         private Model model;
-        private Form1 janela;
+        private FrmMain janela;
+
+        private List<Fatura> lista = new List<Fatura>();
         private string nif;
         private string senha;
 
-        private List<Fatura> lista = new List<Fatura>();
         public event System.EventHandler UtilizadorClicouEmListaFaturas;
+        public event EventHandler UtilizadorClicouEmSair;
 
         public delegate void SolicitacaoListaFaturas(ref List<Fatura> listaFaturas,ref string nif, ref string senha);
         public event SolicitacaoListaFaturas PrecisoDeFaturas;
@@ -24,7 +26,7 @@ namespace SimproV
 
         public void AtivarInterface()
         {
-            janela = new Form1();
+            janela = new FrmMain();
             janela.View = this;
             // A API WinForms desenha as janelas e botões automaticamente
             janela.ShowDialog();
@@ -35,10 +37,28 @@ namespace SimproV
         public void NovaListaFaturas()
         {
             // Apresenta/atualiza a lista de comerciante/qt fatuaras recebidas do Model, com o seletor de atividade para cada um
-            
-            PrecisoDeFaturas(ref lista, ref janela.View.nif, ref janela.View.senha);
-        }
+            FrmListaFaturas frmListaFatura = new FrmListaFaturas();
 
+            PrecisoDeFaturas(ref lista, ref janela.View.nif, ref janela.View.senha);
+
+            
+
+        }
+        public void ShowListaFaturas()
+        {
+            FrmListaFaturas frmListaFaturas = new FrmListaFaturas();
+            frmListaFaturas.ShowLista(lista);
+
+
+        }
+        public void CliqueEmSair(EventArgs e)
+        {
+            UtilizadorClicouEmSair(this, e);
+        }
+        public void Encerrar()
+        {
+            janela.Encerrar();
+        }
         public void ClassificouFaturas()
         {
             // Quando o utilizador selecionou uma atividade(classificou) as faturas de um comerciante
@@ -49,7 +69,7 @@ namespace SimproV
             this.nif = nif;
             this.senha = senha;
 
-            List<Fatura> faturas = new List<Fatura>();
+            this.lista = new List<Fatura>();
             
             UtilizadorClicouEmListaFaturas(origem, e);
 

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿
+using System;
+using System.Collections.Generic;
 
 namespace SimproV
 {
@@ -7,6 +9,7 @@ namespace SimproV
     {
         View view;
         Model model;
+        bool sair;
 
         public delegate void AtivacaoInterface(object origem);
         
@@ -15,22 +18,41 @@ namespace SimproV
         {
             view = new View(model);
             model = new Model(view);
+            sair = false;
 
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
-
-            //model.ListaDeComerciantes += view.NovaListaFaturas;
+            view.UtilizadorClicouEmSair += UtilizadorClicouEmSair;
+            model.ListaDeComerciantes += view.ShowListaFaturas;
 
         }
-
+        private void ErroDeLigacao(ErrosLigacao forma)
+        {
+            //view.AtivarViewLog();
+            //model.RegistarLog(forma);
+        }
         public void IniciarPrograma()
         {
-            //Implementar....
-            view.AtivarInterface();
+            do
+            {
+                try
+                {
+                    view.AtivarInterface();
+                }
+                catch (ExceptionErroLigacao ex)
+                {
+                    ErroDeLigacao(ex.siteEmBaixo);
+                }
+            } while (!sair);
         }
         public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
         {
             view.NovaListaFaturas();
+        }
+        private void UtilizadorClicouEmSair(object sender, EventArgs e)
+        {
+            sair = true;
+            view.Encerrar();
         }
 
     }

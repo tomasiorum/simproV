@@ -6,11 +6,17 @@ namespace SimproV
     [Serializable]
     //Esta classe de exceção pertence ao componente Model
     public class ExceptionErroLigacao : Exception
-    { 
-    
+    {
+        public ErrosLigacao siteEmBaixo;
+
         public ExceptionErroLigacao()
         {
         }
+        public ExceptionErroLigacao(ErrosLigacao erro)
+        {
+            this.siteEmBaixo = erro;
+        }
+
         public ExceptionErroLigacao(string message) : base(message)
         {
         }
