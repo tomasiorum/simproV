@@ -44,10 +44,10 @@ namespace SimproV
             
 
         }
-        public void ShowListaFaturas()
+        public void ShowListaComerciantes()
         {
             FrmListaFaturas frmListaFaturas = new FrmListaFaturas();
-            frmListaFaturas.ShowLista(lista);
+            frmListaFaturas.ShowListaComerciantes(lista);
 
 
         }

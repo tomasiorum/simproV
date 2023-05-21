@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SimproV
@@ -18,9 +12,11 @@ namespace SimproV
         }
 
         // Mostrar a lista faturas
-        internal void ShowLista(List<Fatura> lista)
+        internal void ShowListaComerciantes(List<Fatura> listaComerciantes)
         {
-            int x = 1;
+            FrmListaFaturas frmLista = new FrmListaFaturas();
+            frmLista.ShowDialog();
+            Console.WriteLine("Lista de Comerciantes");
         }
     }
 }

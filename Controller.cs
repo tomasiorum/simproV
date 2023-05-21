@@ -23,7 +23,7 @@ namespace SimproV
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
             view.UtilizadorClicouEmSair += UtilizadorClicouEmSair;
-            model.ListaDeComerciantes += view.ShowListaFaturas;
+            model.ListaDeComerciantes += view.ShowListaComerciantes;
 
         }
         private void ErroDeLigacao(ErrosLigacao forma)
