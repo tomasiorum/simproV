@@ -67,7 +67,7 @@ namespace SimproV
         // <button type="submit" name="sbmtLogin" id="sbmtLogin" tabindex="4" class="sa-btn1" value="Entrar">Autenticar</button>
         private void Login()
         {
-
+            /*
             var loginUsername = _nif;
             var loginPassword = _senha;
 
@@ -77,7 +77,7 @@ namespace SimproV
 
 
 
-
+            
             Configuration.driver.Navigate().GoToUrl("http://www.selenium.academy/Examples/Interaction.html");
             SeleniumSetMethods.EnterText("textbox", loginUsername, "Id");
             Thread.Sleep(WaitTime.Ms);
@@ -88,6 +88,7 @@ namespace SimproV
             button.Click();
 
             Configuration.driver.Quit();
+            */
 
             /*
 
