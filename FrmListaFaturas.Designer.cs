@@ -30,28 +30,59 @@ namespace SimproV
         private void InitializeComponent()
         {
             this.dgListaFaturas = new System.Windows.Forms.DataGridView();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QtDocumentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.Aceita = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaFaturas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgListaFaturas
             // 
+            this.dgListaFaturas.AllowUserToDeleteRows = false;
             this.dgListaFaturas.AllowUserToOrderColumns = true;
             this.dgListaFaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgListaFaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NIF,
             this.Nome,
-            this.QtDocumentos});
+            this.QtDocumentos,
+            this.Aceita});
             this.dgListaFaturas.Location = new System.Drawing.Point(43, 83);
             this.dgListaFaturas.Name = "dgListaFaturas";
+            this.dgListaFaturas.ReadOnly = true;
             this.dgListaFaturas.RowHeadersWidth = 51;
             this.dgListaFaturas.RowTemplate.Height = 24;
             this.dgListaFaturas.Size = new System.Drawing.Size(770, 150);
             this.dgListaFaturas.TabIndex = 0;
+            // 
+            // NIF
+            // 
+            this.NIF.DataPropertyName = "NifComerciante";
+            this.NIF.HeaderText = "Contribuiente";
+            this.NIF.MinimumWidth = 6;
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            this.NIF.Width = 125;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 125;
+            // 
+            // QtDocumentos
+            // 
+            this.QtDocumentos.DataPropertyName = "QtDocumentos";
+            this.QtDocumentos.HeaderText = "Qt.Docs";
+            this.QtDocumentos.MinimumWidth = 6;
+            this.QtDocumentos.Name = "QtDocumentos";
+            this.QtDocumentos.ReadOnly = true;
+            this.QtDocumentos.Width = 125;
             // 
             // btnSair
             // 
@@ -73,29 +104,13 @@ namespace SimproV
             this.lblTitulo.Text = "Lista de Faturas";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // NIF
+            // Aceita
             // 
-            this.NIF.DataPropertyName = "NifComerciante";
-            this.NIF.HeaderText = "Contribuiente";
-            this.NIF.MinimumWidth = 6;
-            this.NIF.Name = "NIF";
-            this.NIF.Width = 125;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 6;
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 125;
-            // 
-            // QtDocumentos
-            // 
-            this.QtDocumentos.DataPropertyName = "QtDocumentos";
-            this.QtDocumentos.HeaderText = "Qt.Docs";
-            this.QtDocumentos.MinimumWidth = 6;
-            this.QtDocumentos.Name = "QtDocumentos";
-            this.QtDocumentos.Width = 125;
+            this.Aceita.HeaderText = "Aceita";
+            this.Aceita.MinimumWidth = 6;
+            this.Aceita.Name = "Aceita";
+            this.Aceita.ReadOnly = true;
+            this.Aceita.Width = 125;
             // 
             // FrmListaFaturas
             // 
@@ -121,5 +136,6 @@ namespace SimproV
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn QtDocumentos;
+        private System.Windows.Forms.DataGridViewButtonColumn Aceita;
     }
 }

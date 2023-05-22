@@ -14,7 +14,7 @@ namespace SimproV
         // Mostrar a lista faturas
         internal void ShowListaComerciantes(List<Fatura> listaComerciantes)
         {
-            //FrmListaFaturas frmLista = new FrmListaFaturas();
+           
             this.dgListaFaturas.AutoGenerateColumns = false;
             dgListaFaturas.DataSource = listaComerciantes;
             this.ShowDialog();
