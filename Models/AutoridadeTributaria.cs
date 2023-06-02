@@ -10,6 +10,7 @@ namespace SimproV
     {
 
         private Login login;
+        private RespostaAT respostaAT;
 
         private string _mensagemErro;
         ErrosLigacao tipoerro;
@@ -24,25 +25,25 @@ namespace SimproV
             this.login = new Login(login);
         }
 
-        public List<Fatura> Processar()
+        public RespostaAT Processar()
         {
-            List<Fatura> listaDeFaturas = new List<Fatura>();
+            respostaAT = new RespostaAT();
             try
             {
                 Login();
-                listaDeFaturas.Add(new Fatura
+                respostaAT.ListaFaturas.Add(new Fatura
                 {
                     NIFComerciante = "111111111",
                     Nome = "Comerciante A",
                     QtDocumentos = 10
                 });
-                listaDeFaturas.Add(new Fatura
+                respostaAT.ListaFaturas.Add(new Fatura
                 {
                     NIFComerciante = "222222222",
                     Nome = "Comerciante b",
                     QtDocumentos = 5 
                 });
-                listaDeFaturas.Add(new Fatura
+                respostaAT.ListaFaturas.Add(new Fatura
                 {
                     NIFComerciante = "333333333",
                     Nome = "Comerciante c",
@@ -54,7 +55,7 @@ namespace SimproV
                 _mensagemErro = "Erro ao efetuar login.";
                 throw;
             }
-            return listaDeFaturas;
+            return respostaAT;
         }
         public string GetMensagemErro()
         {

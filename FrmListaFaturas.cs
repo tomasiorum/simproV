@@ -12,11 +12,11 @@ namespace SimproV
         }
 
         // Mostrar a lista faturas
-        internal void ShowListaComerciantes(List<Fatura> listaComerciantes)
+        internal void ShowListaComerciantes(RespostaAT respostaAT)
         {
            
             this.dgListaFaturas.AutoGenerateColumns = false;
-            dgListaFaturas.DataSource = listaComerciantes;
+            dgListaFaturas.DataSource = respostaAT.ListaFaturas;
             this.ShowDialog();
            
         }

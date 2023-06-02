@@ -20,13 +20,13 @@ namespace SimproV
         {
 
         }
-        public void SolicitarListaFaturas(ref List<Fatura> listaDeFaturas,ref Login login)
+        public void SolicitarListaFaturas(ref RespostaAT respostaAT,ref Login login)
         {
            
             AutoridadeTributaria at = new AutoridadeTributaria(login);
             try
             {
-                 listaDeFaturas = at.Processar();
+                 respostaAT = at.Processar();
             } catch (ExceptionErroLigacao )
             {
                 throw new ExceptionErroLigacao(at.GetMensagemErro());

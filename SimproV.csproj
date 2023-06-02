@@ -70,12 +70,14 @@
     </Compile>
     <Compile Include="Fatura.cs" />
     <Compile Include="ILogin.cs" />
+    <Compile Include="IRespostaAT.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Models\AutoridadeTributaria.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\SeleniumGetMethods.cs" />
     <Compile Include="Models\SeleniumSetMethods.cs" />
+    <Compile Include="RespostaAT.cs" />
     <Compile Include="SimproV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View.cs" />
