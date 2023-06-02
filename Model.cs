@@ -20,10 +20,10 @@ namespace SimproV
         {
 
         }
-        public void SolicitarListaFaturas(ref List<Fatura> listaDeFaturas,ref string nif, ref string senha)
+        public void SolicitarListaFaturas(ref List<Fatura> listaDeFaturas,ref Login login)
         {
            
-            AutoridadeTributaria at = new AutoridadeTributaria(nif,senha);
+            AutoridadeTributaria at = new AutoridadeTributaria(login);
             try
             {
                  listaDeFaturas = at.Processar();

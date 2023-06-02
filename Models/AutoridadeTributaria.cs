@@ -9,8 +9,8 @@ namespace SimproV
     public class AutoridadeTributaria
     {
 
-        private string _nif;
-        private string _senha;
+        private Login login;
+
         private string _mensagemErro;
         ErrosLigacao tipoerro;
 
@@ -19,10 +19,9 @@ namespace SimproV
             get { return tipoerro; }
             set { tipoerro = value; }
         }
-        public AutoridadeTributaria(string nif, string senha)
+        public AutoridadeTributaria(Login login)
         {
-            _nif = nif;
-            _senha = senha;
+            this.login = new Login(login);
         }
 
         public List<Fatura> Processar()
@@ -67,9 +66,9 @@ namespace SimproV
         // <button type="submit" name="sbmtLogin" id="sbmtLogin" tabindex="4" class="sa-btn1" value="Entrar">Autenticar</button>
         private void Login()
         {
-            /*
-            var loginUsername = _nif;
-            var loginPassword = _senha;
+            
+            var loginUsername = login.NIF;
+            var loginPassword = login.Senha;
 
             FirefoxOptions options = new FirefoxOptions();
             options.AddArguments("--headless");
@@ -88,7 +87,7 @@ namespace SimproV
             button.Click();
 
             Configuration.driver.Quit();
-            */
+            
 
             /*
 

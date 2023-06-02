@@ -14,8 +14,8 @@ namespace SimproV
 
         private void btnSolicitarFaturas_Click(object sender, EventArgs e)
         {
-            
-            view.CliqueEmListaFaturas(sender, e,txtNIF.Text,txtSenha.Text);
+            Login login = new Login(txtNIF.Text, txtSenha.Text);
+            view.CliqueEmListaFaturas(sender, e,login);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

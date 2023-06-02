@@ -69,6 +69,8 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Fatura.cs" />
+    <Compile Include="ILogin.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Models\AutoridadeTributaria.cs" />
     <Compile Include="Models\Configuration.cs" />

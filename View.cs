@@ -10,13 +10,12 @@ namespace SimproV
         private FrmMain janela;
 
         private List<Fatura> lista = new List<Fatura>();
-        private string nif;
-        private string senha;
+        private Login login;
 
         public event System.EventHandler UtilizadorClicouEmListaFaturas;
         public event EventHandler UtilizadorClicouEmSair;
 
-        public delegate void SolicitacaoListaFaturas(ref List<Fatura> listaFaturas,ref string nif, ref string senha);
+        public delegate void SolicitacaoListaFaturas(ref List<Fatura> listaFaturas,ref Login login);
         public event SolicitacaoListaFaturas PrecisoDeFaturas;
 
         internal View(Model m)
@@ -39,7 +38,7 @@ namespace SimproV
             // Apresenta/atualiza a lista de comerciante/qt fatuaras recebidas do Model, com o seletor de atividade para cada um
             FrmListaFaturas frmListaFatura = new FrmListaFaturas();
 
-            PrecisoDeFaturas(ref lista, ref janela.View.nif, ref janela.View.senha);
+            PrecisoDeFaturas(ref lista, ref janela.View.login);
 
             
 
@@ -64,10 +63,10 @@ namespace SimproV
             // Quando o utilizador selecionou uma atividade(classificou) as faturas de um comerciante
             
         }
-        public void CliqueEmListaFaturas(object origem, EventArgs e,string nif, string senha)
+        public void CliqueEmListaFaturas(object origem, EventArgs e,Login login)
         {
-            this.nif = nif;
-            this.senha = senha;
+            this.login = new Login(login);
+
 
             this.lista = new List<Fatura>();
             
