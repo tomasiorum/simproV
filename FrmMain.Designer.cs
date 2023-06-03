@@ -72,6 +72,7 @@ namespace SimproV
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(204, 20);
             this.txtSenha.TabIndex = 4;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label2
             // 
