@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SimproV
 {
-    interface IRespostaAT
+    public interface IRespostaAT
     {
-        List<Fatura> ListaFaturas { get; set; }
+        List<Fatura> ListaFaturas { get; }
     }
 }

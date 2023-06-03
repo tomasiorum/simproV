@@ -9,8 +9,8 @@ namespace SimproV
     public class AutoridadeTributaria
     {
 
-        private Login login;
-        private RespostaAT respostaAT;
+        private ILogin login;
+        private IRespostaAT respostaAT;
 
         private string _mensagemErro;
         ErrosLigacao tipoerro;
@@ -20,12 +20,12 @@ namespace SimproV
             get { return tipoerro; }
             set { tipoerro = value; }
         }
-        public AutoridadeTributaria(Login login)
+        public AutoridadeTributaria(ILogin login)
         {
             this.login = new Login(login);
         }
 
-        public RespostaAT Processar()
+        public IRespostaAT Processar()
         {
             respostaAT = new RespostaAT();
             try
@@ -71,6 +71,8 @@ namespace SimproV
             var loginUsername = login.NIF;
             var loginPassword = login.Senha;
 
+            /* @Todo falta a pesquisa ao site das finanças
+             * 
             FirefoxOptions options = new FirefoxOptions();
             options.AddArguments("--headless");
             Configuration.driver = new FirefoxDriver(options);
@@ -88,9 +90,9 @@ namespace SimproV
             button.Click();
 
             Configuration.driver.Quit();
-            
+            */
 
-            /*
+            /* Exemplo da Selelenium
 
             var login_page = "https://www.acesso.gov.pt/jsp/loginRedirectForm.jsp?path=painelAdquirente.action&partID=EFPF";
 
@@ -114,11 +116,6 @@ namespace SimproV
             Configuration.driver.wait
             Thread.Sleep(WaitTime.Ms);
             */
-
-
-
-
-
         }
 
     }

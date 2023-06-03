@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SimproV
 {
-    interface ILogin
+    public interface ILogin
     {
-        string NIF { get; set; }
-        string Senha { get; set; }
+        string NIF { get;}
+        string Senha { get;}
 
     }
 }

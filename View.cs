@@ -9,13 +9,13 @@ namespace SimproV
         private Model model;
         private FrmMain janela;
 
-        private RespostaAT respostaAT;
-        private Login login;
+        public IRespostaAT respostaAT;
+        public ILogin login;
 
         public event System.EventHandler UtilizadorClicouEmListaFaturas;
         public event EventHandler UtilizadorClicouEmSair;
 
-        public delegate void SolicitacaoListaFaturas(ref RespostaAT respostaAT,ref Login login);
+        public delegate void SolicitacaoListaFaturas(ref IRespostaAT respostaAT,ref ILogin login);
         public event SolicitacaoListaFaturas PrecisoDeFaturas;
 
         internal View(Model m)
@@ -63,7 +63,7 @@ namespace SimproV
             // Quando o utilizador selecionou uma atividade(classificou) as faturas de um comerciante
             
         }
-        public void CliqueEmListaFaturas(object origem, EventArgs e,Login login)
+        public void CliqueEmListaFaturas(object origem, EventArgs e,ILogin login)
         {
             this.login = new Login(login);
 

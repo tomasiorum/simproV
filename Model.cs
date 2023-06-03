@@ -20,7 +20,7 @@ namespace SimproV
         {
 
         }
-        public void SolicitarListaFaturas(ref RespostaAT respostaAT,ref Login login)
+        public void SolicitarListaFaturas(ref IRespostaAT respostaAT,ref ILogin login)
         {
            
             AutoridadeTributaria at = new AutoridadeTributaria(login);

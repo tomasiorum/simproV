@@ -4,7 +4,7 @@
     {
         public string NIF { get; set; }
         public string Senha { get; set; }
-        public Login(Login login)
+        public Login(ILogin login)
         {
             this.NIF = login.NIF;
             this.Senha = login.Senha;
