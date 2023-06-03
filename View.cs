@@ -59,6 +59,8 @@ namespace SimproV
             frmListaFaturas.ShowListaComerciantes(respostaAT);
 
 
+
+
         }
         public void CliqueEmSair(EventArgs e)
         {

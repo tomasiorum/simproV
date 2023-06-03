@@ -9,5 +9,6 @@ namespace SimproV
     public class SubmeterComerciante : ISubmeterComerciante
     {
         public string NIF { get; set; }
+        public string Atividade { get; set; }
     }
 }

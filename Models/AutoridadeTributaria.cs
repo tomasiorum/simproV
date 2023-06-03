@@ -58,7 +58,7 @@ namespace SimproV
             return respostaAT;
         }
 
-        internal void SubmeterComerciante(string nif)
+        internal void SubmeterComerciante(string nif, string atividade)
         {
            
         }

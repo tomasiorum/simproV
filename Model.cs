@@ -39,7 +39,7 @@ namespace SimproV
             AutoridadeTributaria at = new AutoridadeTributaria(login);
             try
             {
-               at.SubmeterComerciante(submeterComerciante.NIF);
+               at.SubmeterComerciante(submeterComerciante.NIF, submeterComerciante.Atividade);
             }
             catch (ExceptionErroLigacao)
             {

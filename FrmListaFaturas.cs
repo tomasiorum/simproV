@@ -18,6 +18,7 @@ namespace SimproV
 
             this.dgListaFaturas.AutoGenerateColumns = false;
             dgListaFaturas.DataSource = respostaAT.ListaFaturas;
+
             this.ShowDialog();
 
         }
@@ -34,6 +35,7 @@ namespace SimproV
             view.submeterComerciante = new SubmeterComerciante();
             int row = e.RowIndex;
             view.submeterComerciante.NIF = dgListaFaturas.Rows[row].Cells[0].Value.ToString();
+            view.submeterComerciante.Atividade = dgListaFaturas.Rows[row].Cells[3].Value.ToString();
             view.UtilizadorConfirmaComerciante(sender, e,view.login, view.submeterComerciante);
            
         }
