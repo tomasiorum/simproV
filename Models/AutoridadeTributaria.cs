@@ -57,6 +57,12 @@ namespace SimproV
             }
             return respostaAT;
         }
+
+        internal void SubmeterComerciante(string nif)
+        {
+           
+        }
+
         public string GetMensagemErro()
         {
             return _mensagemErro;

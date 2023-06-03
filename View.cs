@@ -12,16 +12,19 @@ namespace SimproV
 
         public IRespostaAT respostaAT;
         public ILogin login;
+        public ISubmeterComerciante submeterComerciante;
 
+        // FrmMain
+        public delegate void SolicitacaoListaFaturas(ref IRespostaAT respostaAT,ref ILogin login);
         public event System.EventHandler UtilizadorClicouEmListaFaturas;
         public event EventHandler UtilizadorClicouEmSair;
-        public event System.EventHandler UtilizadorConfirmouComerciante;
-
-        public delegate void SolicitarSubmissaoComerciante();
-        public event SolicitarSubmissaoComerciante SubmeterComercianteAT;
-
-        public delegate void SolicitacaoListaFaturas(ref IRespostaAT respostaAT,ref ILogin login);
         public event SolicitacaoListaFaturas PrecisoDeFaturas;
+
+
+        //FrmListaFaturas
+        public delegate void SolicitarSubmissaoComerciante(ILogin login, ISubmeterComerciante submeterComerciante);
+        public event System.EventHandler UtilizadorConfirmouComerciante;
+        public event SolicitarSubmissaoComerciante SubmeterComercianteAT;
 
 
         internal View(Model m)
@@ -65,11 +68,6 @@ namespace SimproV
         {
             janela.Encerrar();
         }
-        public void ClassificouFaturas()
-        {
-            // Quando o utilizador selecionou uma atividade(classificou) as faturas de um comerciante
-            
-        }
         public void CliqueEmListaFaturas(object origem, EventArgs e,ILogin login)
         {
             this.login = new Login(login);
@@ -80,14 +78,19 @@ namespace SimproV
             UtilizadorClicouEmListaFaturas(origem, e);
 
         }
-        public void UtilizadorConfirmaComerciante(object origem, EventArgs e)
+        public void UtilizadorConfirmaComerciante(object origem, EventArgs e, ILogin login, ISubmeterComerciante submeterComerciante )
         {
+            
             //Todo Chamar com o ILgin e ISubmeterComerciante
             UtilizadorConfirmouComerciante(origem, e);
         }
         public void SubmeterComerciante()
         {
-            SubmeterComercianteAT();
+            //frmListaFaturas = new FrmListaFaturas();
+            //frmListaFaturas.View = this;
+            SubmeterComercianteAT(frmListaFaturas.View.login, frmListaFaturas.View.submeterComerciante);
+
+
         }
     }
 

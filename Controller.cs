@@ -20,14 +20,18 @@ namespace SimproV
             model = new Model(view);
             sair = false;
 
+            //FrmMain
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
             view.UtilizadorClicouEmSair += UtilizadorClicouEmSair;
+            // Notifica a view que tem a lista de comerciantes
+            model.ListaDeComerciantes += view.ShowListaComerciantes;
 
+            //FrmListaFaturas
             view.UtilizadorConfirmouComerciante += UtilizadorConfirmouComerciante;
             view.SubmeterComercianteAT += model.SubmeterComercianteAT;
 
-            model.ListaDeComerciantes += view.ShowListaComerciantes;
+
 
         }
         private void ErroDeLigacao(ErrosLigacao forma)

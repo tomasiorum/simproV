@@ -34,16 +34,16 @@ namespace SimproV
 
             ListaDeComerciantes();
         }
-        public void SubmeterComercianteAT()
+        public void SubmeterComercianteAT(ILogin login, ISubmeterComerciante submeterComerciante)
         {
-            //AutoridadeTributaria at = new AutoridadeTributaria();
+            AutoridadeTributaria at = new AutoridadeTributaria(login);
             try
             {
-                //respostaAT = at.Processar();
+               at.SubmeterComerciante(submeterComerciante.NIF);
             }
             catch (ExceptionErroLigacao)
             {
-                //throw new ExceptionErroLigacao(at.GetMensagemErro());
+                throw new ExceptionErroLigacao(at.GetMensagemErro());
             }
 
         }

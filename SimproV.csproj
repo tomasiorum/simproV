@@ -71,6 +71,7 @@
     <Compile Include="Fatura.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="IRespostaAT.cs" />
+    <Compile Include="ISubmeterComerciante.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Models\AutoridadeTributaria.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="RespostaAT.cs" />
     <Compile Include="SimproV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubmeterComerciante.cs" />
     <Compile Include="View.cs" />
     <EmbeddedResource Include="FrmListaFaturas.resx">
       <DependentUpon>FrmListaFaturas.cs</DependentUpon>

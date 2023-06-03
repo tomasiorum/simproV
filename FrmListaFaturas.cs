@@ -29,9 +29,12 @@ namespace SimproV
 
         private void dgListaFaturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+            view.submeterComerciante = new SubmeterComerciante();
             int row = e.RowIndex;
-            string nif = dgListaFaturas.Rows[row].Cells[0].Value.ToString();
-            view.UtilizadorConfirmaComerciante(sender, e);
+            view.submeterComerciante.NIF = dgListaFaturas.Rows[row].Cells[0].Value.ToString();
+            view.UtilizadorConfirmaComerciante(sender, e,view.login, view.submeterComerciante);
            
         }
     }
