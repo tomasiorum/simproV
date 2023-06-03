@@ -23,6 +23,10 @@ namespace SimproV
             view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
             view.PrecisoDeFaturas += model.SolicitarListaFaturas;
             view.UtilizadorClicouEmSair += UtilizadorClicouEmSair;
+
+            view.UtilizadorConfirmouComerciante += UtilizadorConfirmouComerciante;
+            view.SubmeterComercianteAT += model.SubmeterComercianteAT;
+
             model.ListaDeComerciantes += view.ShowListaComerciantes;
 
         }
@@ -49,12 +53,16 @@ namespace SimproV
         {
             view.NovaListaFaturas();
         }
+        public void UtilizadorConfirmouComerciante(object fonte, System.EventArgs args)
+        {
+            view.SubmeterComerciante();
+           
+        }
         private void UtilizadorClicouEmSair(object sender, EventArgs e)
         {
             sair = true;
             view.Encerrar();
         }
-
     }
 }
 

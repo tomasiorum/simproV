@@ -33,9 +33,9 @@ namespace SimproV
             this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QtDocumentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aceita = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSair = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.Aceita = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaFaturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,13 +49,15 @@ namespace SimproV
             this.Nome,
             this.QtDocumentos,
             this.Aceita});
-            this.dgListaFaturas.Location = new System.Drawing.Point(43, 83);
+            this.dgListaFaturas.Location = new System.Drawing.Point(32, 67);
+            this.dgListaFaturas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgListaFaturas.Name = "dgListaFaturas";
             this.dgListaFaturas.ReadOnly = true;
             this.dgListaFaturas.RowHeadersWidth = 51;
             this.dgListaFaturas.RowTemplate.Height = 24;
-            this.dgListaFaturas.Size = new System.Drawing.Size(770, 150);
+            this.dgListaFaturas.Size = new System.Drawing.Size(578, 122);
             this.dgListaFaturas.TabIndex = 0;
+            this.dgListaFaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaFaturas_CellContentClick);
             // 
             // NIF
             // 
@@ -84,26 +86,6 @@ namespace SimproV
             this.QtDocumentos.ReadOnly = true;
             this.QtDocumentos.Width = 125;
             // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(393, 281);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 1;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(381, 32);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(110, 17);
-            this.lblTitulo.TabIndex = 2;
-            this.lblTitulo.Text = "Lista de Faturas";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Aceita
             // 
             this.Aceita.HeaderText = "Aceita";
@@ -112,14 +94,37 @@ namespace SimproV
             this.Aceita.ReadOnly = true;
             this.Aceita.Width = 125;
             // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(295, 228);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(56, 19);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(286, 26);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(82, 13);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "Lista de Faturas";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmListaFaturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 450);
+            this.ClientSize = new System.Drawing.Size(647, 366);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.dgListaFaturas);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmListaFaturas";
             this.Text = "FrmListaFaturas";
             ((System.ComponentModel.ISupportInitialize)(this.dgListaFaturas)).EndInit();

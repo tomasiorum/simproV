@@ -8,15 +8,21 @@ namespace SimproV
         
         private Model model;
         private FrmMain janela;
+        private FrmListaFaturas frmListaFaturas;
 
         public IRespostaAT respostaAT;
         public ILogin login;
 
         public event System.EventHandler UtilizadorClicouEmListaFaturas;
         public event EventHandler UtilizadorClicouEmSair;
+        public event System.EventHandler UtilizadorConfirmouComerciante;
+
+        public delegate void SolicitarSubmissaoComerciante();
+        public event SolicitarSubmissaoComerciante SubmeterComercianteAT;
 
         public delegate void SolicitacaoListaFaturas(ref IRespostaAT respostaAT,ref ILogin login);
         public event SolicitacaoListaFaturas PrecisoDeFaturas;
+
 
         internal View(Model m)
         {
@@ -36,8 +42,8 @@ namespace SimproV
         public void NovaListaFaturas()
         {
             // Apresenta/atualiza a lista de comerciante/qt fatuaras recebidas do Model, com o seletor de atividade para cada um
-            FrmListaFaturas frmListaFatura = new FrmListaFaturas();
-
+            frmListaFaturas = new FrmListaFaturas();
+            frmListaFaturas.View = this;
             PrecisoDeFaturas(ref respostaAT, ref janela.View.login);
 
             
@@ -45,7 +51,8 @@ namespace SimproV
         }
         public void ShowListaComerciantes()
         {
-            FrmListaFaturas frmListaFaturas = new FrmListaFaturas();
+            frmListaFaturas = new FrmListaFaturas();
+            frmListaFaturas.View = this;
             frmListaFaturas.ShowListaComerciantes(respostaAT);
 
 
@@ -72,6 +79,15 @@ namespace SimproV
             
             UtilizadorClicouEmListaFaturas(origem, e);
 
+        }
+        public void UtilizadorConfirmaComerciante(object origem, EventArgs e)
+        {
+            //Todo Chamar com o ILgin e ISubmeterComerciante
+            UtilizadorConfirmouComerciante(origem, e);
+        }
+        public void SubmeterComerciante()
+        {
+            SubmeterComercianteAT();
         }
     }
 

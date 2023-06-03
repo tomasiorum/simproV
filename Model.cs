@@ -34,6 +34,19 @@ namespace SimproV
 
             ListaDeComerciantes();
         }
+        public void SubmeterComercianteAT()
+        {
+            //AutoridadeTributaria at = new AutoridadeTributaria();
+            try
+            {
+                //respostaAT = at.Processar();
+            }
+            catch (ExceptionErroLigacao)
+            {
+                //throw new ExceptionErroLigacao(at.GetMensagemErro());
+            }
+
+        }
     }
 }
 
