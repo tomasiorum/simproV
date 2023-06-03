@@ -36,8 +36,7 @@ namespace SimproV
         }
         private void ErroDeLigacao(ErrosLigacao forma)
         {
-            //view.AtivarViewLog();
-            //model.RegistarLog(forma);
+            // Todo Gravar log em ficheiro
         }
         public void IniciarPrograma()
         {

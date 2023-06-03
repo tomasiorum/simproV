@@ -36,11 +36,8 @@ namespace SimproV
         {
             janela = new FrmMain();
             janela.View = this;
-            // A API WinForms desenha as janelas e botões automaticamente
+
             janela.ShowDialog();
-            // Temos que conectar o objetos do Model e do Controller
-            // Desenhar janelas e botões ocorre no código automático da API WinForms
-            // A animação do clique do botão é gerada pelo código da API WinForms
         }
         public void NovaListaFaturas()
         {
@@ -48,19 +45,12 @@ namespace SimproV
             frmListaFaturas = new FrmListaFaturas();
             frmListaFaturas.View = this;
             PrecisoDeFaturas(ref respostaAT, ref janela.View.login);
-
-            
-
         }
         public void ShowListaComerciantes()
         {
             frmListaFaturas = new FrmListaFaturas();
             frmListaFaturas.View = this;
             frmListaFaturas.ShowListaComerciantes(respostaAT);
-
-
-
-
         }
         public void CliqueEmSair(EventArgs e)
         {
@@ -82,17 +72,12 @@ namespace SimproV
         }
         public void UtilizadorConfirmaComerciante(object origem, EventArgs e, ILogin login, ISubmeterComerciante submeterComerciante )
         {
-            
-            //Todo Chamar com o ILgin e ISubmeterComerciante
+            //Todo Chamar com o ILogin e ISubmeterComerciante
             UtilizadorConfirmouComerciante(origem, e);
         }
         public void SubmeterComerciante()
         {
-            //frmListaFaturas = new FrmListaFaturas();
-            //frmListaFaturas.View = this;
             SubmeterComercianteAT(frmListaFaturas.View.login, frmListaFaturas.View.submeterComerciante);
-
-
         }
     }
 

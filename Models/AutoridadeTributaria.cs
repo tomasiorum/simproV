@@ -1,9 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using System.Collections.Generic;
-using System.Threading;
-
-namespace SimproV
+﻿namespace SimproV
 {
     public enum ErrosLigacao { SiteEmBaixo };
     public class AutoridadeTributaria
@@ -27,6 +22,7 @@ namespace SimproV
 
         public IRespostaAT Processar()
         {
+            // Foi aplicado em HardCode porque não temos o acesso à At
             respostaAT = new RespostaAT();
             try
             {
@@ -60,7 +56,8 @@ namespace SimproV
 
         internal void SubmeterComerciante(string nif, string atividade)
         {
-           
+           // Todo Falta implementar a submissão à AT.
+           // ou então remover da lista inicial fornecida ao utilizador
         }
 
         public string GetMensagemErro()

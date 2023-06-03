@@ -6,8 +6,11 @@ namespace SimproV
     class Model
     {
         private View view;
+        // Notificar o controller da lista de comerciantes
+        // e por sua vez o controller à View
         public delegate void NotificarListaDeComerciantes();
         public event NotificarListaDeComerciantes ListaDeComerciantes;
+
         public Model(View v)
         {
             view = v;
