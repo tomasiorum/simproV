@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-namespace SimproV
+namespace SimproV.Models
 {
     public class Configuration
     {

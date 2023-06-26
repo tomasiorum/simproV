@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,39 +57,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\JsonBD.cs" />
+    <Compile Include="BD\Utente.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="ExceptionErroLigacao.cs" />
-    <Compile Include="FrmListaFaturas.cs">
+    <Compile Include="Views\FrmListaComerciantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListaFaturas.Designer.cs">
-      <DependentUpon>FrmListaFaturas.cs</DependentUpon>
+    <Compile Include="Views\FrmListaComerciantes.Designer.cs">
+      <DependentUpon>FrmListaComerciantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="Views\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
+    <Compile Include="Views\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fatura.cs" />
-    <Compile Include="ILogin.cs" />
-    <Compile Include="IRespostaAT.cs" />
-    <Compile Include="ISubmeterComerciante.cs" />
-    <Compile Include="Login.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="Interfaces\ILinhaComerciante.cs" />
+    <Compile Include="Models\LinhaComerciante.cs" />
+    <Compile Include="Interfaces\ILogin.cs" />
+    <Compile Include="Interfaces\IRespostaAT.cs" />
+    <Compile Include="Interfaces\ISubmeterComerciante.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\AutoridadeTributaria.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\SeleniumGetMethods.cs" />
     <Compile Include="Models\SeleniumSetMethods.cs" />
-    <Compile Include="RespostaAT.cs" />
+    <Compile Include="Models\RespostaAT.cs" />
     <Compile Include="SimproV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubmeterComerciante.cs" />
-    <Compile Include="View.cs" />
-    <EmbeddedResource Include="FrmListaFaturas.resx">
-      <DependentUpon>FrmListaFaturas.cs</DependentUpon>
+    <Compile Include="Models\SubmeterComerciante.cs" />
+    <Compile Include="Views\ViewMain.cs" />
+    <EmbeddedResource Include="Views\FrmListaComerciantes.resx">
+      <DependentUpon>FrmListaComerciantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="Views\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BD\Atividades.json" />
+    <None Include="BD\Comerciantes.json" />
+    <None Include="BD\Utentes.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

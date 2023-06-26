@@ -1,0 +1,26 @@
+{
+  "Comerciantes": [
+    {
+      "NIF": "111111111",
+      "Nome": "Comerciante 1",
+      "Atividade": "1"
+    },
+    {
+      "NIF": "222222222",
+      "Nome": "Comerciante 2",
+      "Atividade": "2"
+
+    },
+    {
+      "NIF": "333333333",
+      "Nome": "Comerciante 3",
+      "Atividade": "3"
+    },
+    {
+      "NIF": "444444444",
+      "Nome": "Comerciante 4",
+      "Atividade": "4"
+    }
+
+  ]
+}

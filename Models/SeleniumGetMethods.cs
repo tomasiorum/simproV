@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
 
-namespace SimproV
+namespace SimproV.Models
 {
     class SeleniumGetMethods
     {

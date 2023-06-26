@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimproV.Models;
+using System;
 using System.Runtime.Serialization;
 
 namespace SimproV

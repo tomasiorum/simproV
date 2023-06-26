@@ -1,0 +1,20 @@
+{
+  "Comerciantes": [
+    {
+      "Atividade": "1",
+      "Descricao": "Cabeleireiros"
+    },
+    {
+      "Atividade": "2",
+      "Descricao": "Oficinas"
+    },
+    {
+      "Atividade": "3",
+      "Descricao": "Restauração"
+    },
+    {
+      "Atividade": "4",
+      "Descricao":  "Saùdade"
+    }
+  ]
+}

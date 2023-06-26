@@ -1,13 +1,13 @@
 ﻿
+using SimproV.Models;
+using SimproV.Views;
 using System;
-using System.Collections.Generic;
 
 namespace SimproV
 {
-
     class Controller
     {
-        View view;
+        ViewMain view;
         Model model;
         bool sair;
 
@@ -16,16 +16,19 @@ namespace SimproV
 
         public Controller()
         {
-            view = new View(model);
+            view = new ViewMain(model);
             model = new Model(view);
             sair = false;
 
             //FrmMain
-            view.UtilizadorClicouEmListaFaturas += UtilizadorClicouEmListaFaturas;
-            view.PrecisoDeFaturas += model.SolicitarListaFaturas;
+            //Associar um evento com uma instância de um delegate que já existe
+            view.PrecisoComerciantes += model.GetComerciantesAT;
+            view.UtilizadorPediuListaComerciantes += UtilizadorPediuListaComerciantes;
+
+
             view.UtilizadorClicouEmSair += UtilizadorClicouEmSair;
             // Notifica a view que tem a lista de comerciantes
-            model.ListaDeComerciantes += view.ShowListaComerciantes;
+            model.JaTenhoListaComerciantes += view.ShowListaComerciantes;
 
             //FrmListaFaturas
             view.UtilizadorConfirmouComerciante += UtilizadorConfirmouComerciante;
@@ -52,9 +55,9 @@ namespace SimproV
                 }
             } while (!sair);
         }
-        public void UtilizadorClicouEmListaFaturas(object fonte, System.EventArgs args)
+        public void UtilizadorPediuListaComerciantes(object fonte, System.EventArgs args)
         {
-            view.NovaListaFaturas();
+            view.GetListaComerciantes();
         }
         public void UtilizadorConfirmouComerciante(object fonte, System.EventArgs args)
         {

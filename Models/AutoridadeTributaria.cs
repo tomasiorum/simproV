@@ -1,4 +1,8 @@
-﻿namespace SimproV
+﻿using SimproV.Interfaces;
+using System;
+
+namespace SimproV.Models
+
 {
     public enum ErrosLigacao { SiteEmBaixo };
     public class AutoridadeTributaria
@@ -27,28 +31,28 @@
             try
             {
                 Login();
-                respostaAT.ListaFaturas.Add(new Fatura
+                respostaAT.LinhasComerciantes.Add(new LinhaComerciante
                 {
-                    NIFComerciante = "111111111",
+                    NIF = "111111111",
                     Nome = "Comerciante A",
                     QtDocumentos = 10
                 });
-                respostaAT.ListaFaturas.Add(new Fatura
+                respostaAT.LinhasComerciantes.Add(new LinhaComerciante
                 {
-                    NIFComerciante = "222222222",
+                    NIF = "222222222",
                     Nome = "Comerciante b",
                     QtDocumentos = 5 
                 });
-                respostaAT.ListaFaturas.Add(new Fatura
+                respostaAT.LinhasComerciantes.Add(new LinhaComerciante
                 {
-                    NIFComerciante = "333333333",
+                    NIF = "333333333",
                     Nome = "Comerciante c",
                     QtDocumentos = 7 
                 });
             }
-            catch
+            catch(Exception ex)
             {
-                _mensagemErro = "Erro ao efetuar login.";
+                _mensagemErro = "Erro ao efetuar login." + ex;
                 throw;
             }
             return respostaAT;

@@ -1,0 +1,27 @@
+{
+  "Utentes": [
+    {
+      "Nome": "Patavinas",
+      "NIF": "123456789",
+      "Senha": "xpto1"
+    },
+    {
+      "Nome": "Estarola",
+      "NIF": "987654321",
+      "Senha": "xpto2"
+    },
+    {
+      "Nome": "José Carlos",
+      "NIF": "111111111",
+      "Senha": "xpto3"
+    },
+    {
+      "Utente": "José Carlos",
+      "NIF": "111111111",
+      "Senha": "xpto3"
+    }
+
+
+  ]
+
+}
